@@ -9,13 +9,94 @@ namespace Test_projet
 {
     class Program
     {
+        //Probleme d'affichage (-)
+        static void ReadFile(string file)
+        {
+            // Lire et afficher les donées du fichier
+            try
+            {
+                // Lis dans le fichier.
+                String text = @"C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Files_GestionScolaireb" + file ;
+                // Ecris ce qui a été lu dans le fichier sur la console.
+
+                string line = " ";
+                int counter = 0;
+                string res = "";
+
+                System.IO.StreamReader var = new System.IO.StreamReader(text);
+                while ((line = var.ReadLine()) != null)
+                {
+                    Char sep = ':';
+                    String[] split = line.Split(sep);
+
+                    res += "-";
+                    foreach (string value in split ) { res += value; }
+                    res += "\n";
+                    counter++;
+                }
+
+                Console.WriteLine(res);
+                Console.WriteLine("\nVous allez revenir au menu");
+            }
+
+            // Erreurs
+            catch (System.IO.IOException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+
+            
+            
+        }
+
+        static void WriteFile(string filetxt, string str)
+        {
+            string folderName = @"C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\";  // Spécifier un nom pour le DOSSIER
+            string subfolderName = "Files_GestionScolaire";          // Spécifier un nom pour le SOUS-DOSSIER
+            string pathString = System.IO.Path.Combine(folderName, subfolderName);     // Définit le chemin du DOSSIER au SOUS-DOSSIER.
+            System.IO.Directory.CreateDirectory(pathString);                           // Création du chemin du DOSSIER au SOUS-DOSSIER.
+            string fileName = filetxt;              // Spécifier un nom pour le fichier
+            pathString = System.IO.Path.Combine(pathString, fileName);                 // Définit le chemin du SOUS-DOSSIER au FICHIER.
+
+            using(System.IO.StreamWriter file = new System.IO.StreamWriter(pathString, true))
+            {
+                file.WriteLine(str);
+            }
+            
+
+        }
+
+        static string[] FindObjectValue(string filetxt, string name)
+        {
+            string path = @"C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Files_GestionScolaire" + filetxt;
+            String[] erreur = { "erreur" };
+            
+            int counter = 0;
+            string line;
+            
+            // Read the file and display it line by line.
+            System.IO.StreamReader file = new System.IO.StreamReader(path);
+
+            while ((line = file.ReadLine()) != null)
+            {
+                Char sep = ':';
+                String[] split = line.Split(sep);
+
+                if (split[1] == name) {return split; }
+                counter++;
+            }
+            return erreur;
+            
+        }
+    
+
         static void Item(string item)
         {
-            // On définit le nom, prénom et salaire d'un professeur.
+            // On entre les données de création du professeur ( le nom, prénom et salaire )
             if (item == "Teacher")
             {
-                Console.WriteLine("Créer un proffesseur");
-                Console.WriteLine("ATTENTION -> Introduire toutes les caractères en MAJUSCULE!");
+                Console.WriteLine("Créer un professeur");
                 Console.Write("Prénom : ");
                 string firstname = Console.ReadLine();
                 Console.Write("Nom : ");
@@ -24,34 +105,21 @@ namespace Test_projet
                 int salary = int.Parse(Console.ReadLine());
 
                 // Création de l'objet grâce aux valeurs données.
-                Teacher testT = new Teacher(firstname, lastname, salary);
-
-                string folderName = @"c:\Test_create_folder\";  // Spécifier un nom pour le DOSSIER
-                string subfolderName = "Sous-Dossier";          // Spécifier un nom pour le SOUS-DOSSIER
-                string pathString = System.IO.Path.Combine(folderName, subfolderName);     // Définit le chemin du DOSSIER au SOUS-DOSSIER.
-                System.IO.Directory.CreateDirectory(pathString);                           // Création du chemin du DOSSIER au SOUS-DOSSIER.
-                string fileName = "Teacher.txt";              // Spécifier un nom pour le fichier
-                pathString = System.IO.Path.Combine(pathString, fileName);                 // Définit le chemin du SOUS-DOSSIER au FICHIER.
-
-                // Ajouter du nouveau texte à un fichier existant. 
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"c:\Test_create_folder\Sous-Dossier\Teacher.txt", true))
-                {
-                    file.WriteLine(testT.Firstname + ":" + testT.Lastname + ":" + testT.Salary + ":" + "\n");
-                }
+                Teacher Prof = new Teacher(firstname, lastname, salary);
+                
+                //Ecriture dans le fichier 
+                string str = Prof.Firstname + ":" + Prof.Lastname + ":" + Prof.Salary + ":" + "\n";
+                WriteFile("Teacher.txt", str);
 
                 Console.WriteLine("Le proffesseur a bien été créé dans la base de données.\nVous allez revenir au menu");
                 Console.ReadKey();
-
-
                 return;
             }
-
-
+            
             // On définit le nom et prénom d'un étudiant.
             else if (item == "Student")
             {
                 Console.WriteLine("Créer un étudiant");
-                Console.WriteLine("ATTENTION -> Introduire toutes les caractères en MAJUSCULE!");
                 Console.Write("Prénom : ");
                 string firstname = Console.ReadLine();
                 Console.Write("Nom : ");
@@ -59,19 +127,9 @@ namespace Test_projet
 
                 // Création de l'objet grâce aux valeurs données.
                 Student testS = new Student(firstname, lastname);
-
-                string folderName = @"c:\Test_create_folder\";  // Spécifier un nom pour le DOSSIER
-                string subfolderName = "Sous-Dossier";          // Spécifier un nom pour le SOUS-DOSSIER
-                string pathString = System.IO.Path.Combine(folderName, subfolderName);     // Définit le chemin du DOSSIER au SOUS-DOSSIER.
-                System.IO.Directory.CreateDirectory(pathString);                           // Création du chemin du DOSSIER au SOUS-DOSSIER.
-                string fileName = "Student.txt";              // Spécifier un nom pour le fichier
-                pathString = System.IO.Path.Combine(pathString, fileName);                 // Définit le chemin du SOUS-DOSSIER au FICHIER.
-
-                // Ajouter du nouveau texte à un fichier existant. 
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"c:\Test_create_folder\Sous-Dossier\Student.txt", true))
-                {
-                    file.WriteLine(testS.Firstname + ":" + testS.Lastname + ":" + "\n");
-                }
+                
+                string str = testS.Firstname + ":" + testS.Lastname + ":" + "\n";
+                WriteFile("Student.txt", str);
 
                 Console.WriteLine("L'étudiant a bien été créé dans la base de données.\nVous allez revenir au menu");
                 Console.ReadKey();
@@ -84,54 +142,32 @@ namespace Test_projet
             else if (item == "Activite")
             {
                 Console.WriteLine("Créer une activité");
-                Console.WriteLine("ATTENTION -> Introduire toutes les caractères en MAJUSCULE!");
                 Console.Write("Nombre ECTS : ");
                 int ECTS = int.Parse(Console.ReadLine());
                 Console.Write("Nom : ");
                 string Name = Console.ReadLine();
                 Console.Write("Code : ");
                 string Code = Console.ReadLine();
-                Console.Write("Proffesseur : ");
-                string Teacher = Console.ReadLine();
+                Console.Write("Attention , le professeur doit déjà être encodé");
+                Console.Write("Nom du proffesseur : ");
+                string teacher = Console.ReadLine();
 
-
-                // Lis dans le fichier Teacher.txt
-                String text = System.IO.File.ReadAllText(@"c:\Test_create_folder\Sous-Dossier\Teacher.txt");
-                Char delimiter = ':';
-                String[] substrings = text.Split(delimiter);
-                foreach (var substring in substrings)
-                    if (substring == Teacher)
-                    {
-                        Console.WriteLine(substring + "trouvé");
-                    }
-               
-                Teacher testB = new Teacher("Emile", "Albert", 2300);
-                string nameComplet = testB.Firstname + " " + testB.Lastname ;
+                //Recréation de l'objet teacher
+                String[] data = FindObjectValue("Teacher.txt", teacher);                    
+                Teacher Prof = new Teacher(data[1], data[0], int.Parse(data[2]));
                 
-
                 // Création de l'objet grâce aux valeurs données.
-                //Activity testA = new Activity(ECTS, Name, Code, nameComplet);
+                Activity Cours = new Activity(ECTS, Name, Code, Prof);
 
-                string folderName = @"c:\Test_create_folder\";  // Spécifier un nom pour le DOSSIER
-                string subfolderName = "Sous-Dossier";          // Spécifier un nom pour le SOUS-DOSSIER
-                string pathString = System.IO.Path.Combine(folderName, subfolderName);     // Définit le chemin du DOSSIER au SOUS-DOSSIER.
-                System.IO.Directory.CreateDirectory(pathString);                           // Création du chemin du DOSSIER au SOUS-DOSSIER.
-                string fileName = "Activite.txt";              // Spécifier un nom pour le fichier
-                pathString = System.IO.Path.Combine(pathString, fileName);                 // Définit le chemin du SOUS-DOSSIER au FICHIER.
+                string str = Cours.ECTS + ":" + Cours.Name + ":" + Cours.Code + Prof.Firstname + ":" + "\n";
+                WriteFile("Activity.txt", str);
 
-                // Ajouter du nouveau texte à un fichier existant. 
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"c:\Test_create_folder\Sous-Dossier\Activite.txt", true))
-                {
-                    file.WriteLine(nameComplet + ":" + "\n");
-                    //file.WriteLine(testA.ECTS + ":" + testA.Name + ":" + testA.Code + ":" + testA.testB + ":" + "\n");
-                }
-
+                Console.WriteLine(Cours);
                 Console.WriteLine("L'activité a bien été créé dans la base de données.\nVous allez revenir au menu");
                 Console.ReadKey();
                 return;
+                
             }
-
-            
             /*
             // On définit l'évaluation d'un élève.
             else if (item == "Evaluation")
@@ -168,14 +204,8 @@ namespace Test_projet
 
         static void Main()
         {
-            string folderName = @"C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet\Test_projet\TEST";  // Spécifier un nom pour le DOSSIER
-            string subfolderName = "Sous-Dossier";          // Spécifier un nom pour le SOUS-DOSSIER
 
-            string pathString = System.IO.Path.Combine(folderName, subfolderName);     // Définit le chemin du DOSSIER au SOUS-DOSSIER.
-            System.IO.Directory.CreateDirectory(pathString);                           // Création du chemin du DOSSIER au SOUS-DOSSIER.
-
-
-            //Création d'objet en mode console
+//Création d'objet en mode console
 
             string Accueil =
 @"********** Gestion Etablissement **********
@@ -243,7 +273,7 @@ namespace Test_projet
                                 Item("Student");
                                 break;
                             case 3:
-                                Item("Activite");
+                                Item("Activity");
                                 break;
                             case 4:
                                 Console.WriteLine("Créer une évaluation");
@@ -253,15 +283,10 @@ namespace Test_projet
                                 Console.WriteLine("Créer un bulletin");
                                 Console.ReadKey();
                                 break;
-                            case 6:
-                                Console.WriteLine("Ok");
-                                break;
-                            case 7:
+                           case 7:
                                 break;
                         }
-                    goto case 0;
-                    break;
-    
+                        goto case 0;
 
                     case 2:
                         Console.Clear();
@@ -274,63 +299,20 @@ namespace Test_projet
                         {
                             case 1:
                                 Console.WriteLine("Voici la liste des professeurs : \n");
-                                // Lire et afficher les donées du fichier
-                                try
-                                {
-                                    // Lis dans le fichier.
-                                    String text = System.IO.File.ReadAllText(@"c:\Test_create_folder\Sous-Dossier\Teacher.txt");
-                                    // Ecris ce qui a été lu dans le fichier sur la console.
-                                    Console.Write(text);
-                                    Console.WriteLine();
-                                }
-
-                                // Erreurs
-                                catch (System.IO.IOException e)
-                                {
-                                    Console.WriteLine(e.Message);
-                                }
-                                Console.WriteLine("Tout est repris.");
+                                ReadFile("Teacher.txt");
                                 Console.ReadKey();
-                                return;
                                 break;
+
                             case 2:
                                 Console.WriteLine("Voici la liste des étudiants : \n");
-                                // Lire et afficher les donées du fichier
-                                try
-                                {
-                                    // Lis dans le fichier.
-                                    String text = System.IO.File.ReadAllText(@"c:\Test_create_folder\Sous-Dossier\Student.txt");
-                                    // Ecris ce qui a été lu dans le fichier sur la console.
-                                    Console.Write(text);
-                                    Console.WriteLine();
-                                }
-
-                                // Erreurs
-                                catch (System.IO.IOException e)
-                                {
-                                    Console.WriteLine(e.Message);
-                                }
-                                return;
+                                ReadFile("Student.txt");
+                                Console.ReadKey();
                                 break;
 
                             case 3:
                                 Console.WriteLine("Voici la liste des activités : \n");
-                                // Lire et afficher les donées du fichier
-                                try
-                                {
-                                    // Lis dans le fichier.
-                                    String text = System.IO.File.ReadAllText(@"c:\Test_create_folder\Sous-Dossier\Activite.txt");
-                                    // Ecris ce qui a été lu dans le fichier sur la console.
-                                    Console.Write(text);
-                                    Console.WriteLine();
-                                }
-
-                                // Erreurs
-                                catch (System.IO.IOException e)
-                                {
-                                    Console.WriteLine(e.Message);
-                                }
-                                return;
+                                ReadFile("Activity.txt");
+                                Console.ReadKey();
                                 break;
 
                             case 6:
@@ -342,12 +324,7 @@ namespace Test_projet
 
                         }
                         goto case 0;
-                        break;
-
-                    case 7:
-                        return;
-
-                }
+                  }
             }
 
             catch (System.FormatException) { Console.WriteLine("Erreur"); }

@@ -10,3 +10,9 @@ C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet\Test_pr
 C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet\Test_projet\Test_projet\bin\Debug\Test_projet.exe
 C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet\Test_projet\Test_projet\bin\Debug\Test_projet.pdb
 C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet\Test_projet\Test_projet\obj\Debug\Test_projet.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Test_projet\bin\Debug\Test_projet.exe.config
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Test_projet\obj\Debug\Test_projet.exe
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Test_projet\obj\Debug\Test_projet.pdb
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Test_projet\bin\Debug\Test_projet.exe
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Test_projet\bin\Debug\Test_projet.pdb
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Test_projet\obj\Debug\Test_projet.csprojResolveAssemblyReference.cache
