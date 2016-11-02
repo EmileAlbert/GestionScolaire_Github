@@ -10,7 +10,7 @@ using System.Runtime.Serialization;
 
 namespace Test_projet
 {
-    class Person
+    public class Person
     {
         //Attribut
         private string firstname, lastname;

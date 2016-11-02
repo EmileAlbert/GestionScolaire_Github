@@ -1,0 +1,8 @@
+4:Informatique:IN3BA:Lurkin:
+
+7:Electronique:EL3BA:Gueuning:
+
+8:Signaux:SI3BA:De Bruyne:
+
+6:Physique:CH2BA2:Lombart:
+8:Math:MA3BA:Hileware:

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD4C380D-FE86-4B4E-A260-529C85B37F2B}</ProjectGuid>
+    <ProjectGuid>{5D2E3593-841F-42C7-BEEC-45DF9F0FCF07}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test_projet</RootNamespace>
-    <AssemblyName>Test_projet</AssemblyName>
+    <RootNamespace>Projet_1</RootNamespace>
+    <AssemblyName>Projet_1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class_Activity.cs" />
+    <Compile Include="Class_Appreciation.cs" />
+    <Compile Include="Class_Cote.cs" />
     <Compile Include="Class_Evaluation.cs" />
     <Compile Include="Class_Person.cs" />
     <Compile Include="Class_Student.cs" />

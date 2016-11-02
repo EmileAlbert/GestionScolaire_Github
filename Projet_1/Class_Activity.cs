@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Test_projet
 {
-    class Activity
+    public class Activity
     {
         //Attribut 
         public int ects;

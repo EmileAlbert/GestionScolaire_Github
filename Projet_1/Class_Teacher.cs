@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Test_projet
 {
     // Héritage -> Teacher dérive de Person
-    class Teacher : Person
+    public class Teacher : Person
     {
         //Attribut
         private int salary;

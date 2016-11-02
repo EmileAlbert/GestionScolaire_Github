@@ -1,0 +1,18 @@
+c:\users\anizetho\documents\visual studio 2015\Projects\Projet_1\Projet_1\bin\Debug\Projet_1.exe.config
+C:\Users\Anizetho\Documents\Visual Studio 2015\Projects\Projet_1\Projet_1\bin\Debug\Projet_1.exe
+C:\Users\Anizetho\Documents\Visual Studio 2015\Projects\Projet_1\Projet_1\bin\Debug\Projet_1.pdb
+C:\Users\Anizetho\Documents\Visual Studio 2015\Projects\Projet_1\Projet_1\obj\Debug\Projet_1.exe
+C:\Users\Anizetho\Documents\Visual Studio 2015\Projects\Projet_1\Projet_1\obj\Debug\Projet_1.pdb
+C:\Users\Anizetho\Documents\Visual Studio 2015\Projects\Projet_1\Projet_1\obj\Debug\Projet_1.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet_Informatique-C--master\Projet_1\bin\Debug\Projet_1.exe.config
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet_Informatique-C--master\Projet_1\obj\Debug\Projet_1.exe
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet_Informatique-C--master\Projet_1\obj\Debug\Projet_1.pdb
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet_Informatique-C--master\Projet_1\bin\Debug\Projet_1.exe
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet_Informatique-C--master\Projet_1\bin\Debug\Projet_1.pdb
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\Projet_Informatique-C--master\Projet_1\obj\Debug\Projet_1.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Projet_1\bin\Debug\Projet_1.exe.config
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Projet_1\obj\Debug\Projet_1.exe
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Projet_1\obj\Debug\Projet_1.pdb
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Projet_1\bin\Debug\Projet_1.exe
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Projet_1\bin\Debug\Projet_1.pdb
+C:\Users\Admin\Documents\Mes Documents\ECAM\(3BA) Informatique C#\GestionScolaire_Github\Projet_1\obj\Debug\Projet_1.csprojResolveAssemblyReference.cache

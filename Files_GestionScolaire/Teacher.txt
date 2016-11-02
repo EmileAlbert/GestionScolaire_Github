@@ -1,4 +1,8 @@
-Quentin:Lurkin:3500:
+Lurkin:Quentin:3000:
 
-Philippe :Dekimpe:3500:
+Gueuning:Francis:3500:
 
+De Bruyne:Franky:3000:
+
+Lombart:Sabine :3000:
+Hileware:Ruben :3200:

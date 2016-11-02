@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Test_projet
 {
     // la classe Student dérive de Person
-    class Student : Person
+    public class Student : Person
     {
         //Attribut 
         // En général, pour déclarer une liste -> List <int> cours = new List <int> ();
@@ -46,14 +46,17 @@ namespace Test_projet
         // Remarque : Note() est définit dans la classe Evaluation.
         public double Average()
         {
-            double sum = 0;
+            float sum = 0;
             for (int i = 0; i < cours.Count(); i++)
             {
                 sum += cours[i].Note();
             }
 
-            return sum / cours.Count();
-        }
+            float res100 = (sum*100 / cours.Count());
+            //double 
+            return res100;    
+        }   
+
 
         // Rédiger le bulletin
         public void Bulletin()
@@ -68,7 +71,8 @@ namespace Test_projet
                 Carnet += "\n";
             }
 
-            Console.WriteLine(Firstname + " " + Lastname + "\n \n" + Carnet + "\n" + "Moyenne : " + Average());
+            Console.Write(Firstname + " " + Lastname + "\n \n" + Carnet + "\n" + "Moyenne : " + Average());
+            Console.WriteLine("");
             Console.ReadKey();
         }
 
