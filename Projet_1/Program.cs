@@ -554,9 +554,9 @@ namespace Test_projet
                             case 5:
                             Console.Clear();
                             Console.WriteLine("Voici la liste reprenant dans l'ordre : \n 1) L'activité concernée \n 2) Nom de l'élève \n 3) Les points de l'élève dans cette activité \n 4) Le nom du prof qui gère cette activité \n");
-                                ReadFile("Appreciation.txt");
-                                Console.ReadKey();
-                                break;
+                            ReadFile("Appreciation.txt");
+                            Console.ReadKey();
+                            break;
 
                             case 6:
                             Console.Clear();

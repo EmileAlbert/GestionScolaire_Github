@@ -44,7 +44,7 @@ namespace Test_projet
 
         // Retourner la moyenne des cotes de la liste cours.
         // Remarque : Note() est définit dans la classe Evaluation.
-        public double Average()
+        public float Average()
         {
             float sum = 0;
             for (int i = 0; i < cours.Count(); i++)
@@ -52,9 +52,8 @@ namespace Test_projet
                 sum += cours[i].Note();
             }
 
-            float res100 = (sum*100 / cours.Count());
-            //double 
-            return res100;    
+            float res = (sum / cours.Count());
+            return res;
         }   
 
 
@@ -71,7 +70,9 @@ namespace Test_projet
                 Carnet += "\n";
             }
 
-            Console.Write(Firstname + " " + Lastname + "\n \n" + Carnet + "\n" + "Moyenne : " + Average());
+            Console.Write(Firstname + " " + Lastname + "\n \n" + Carnet + "\n" + "Moyenne : ");
+            string outString = Average().ToString("####0.00");
+            Console.WriteLine(outString);
             Console.WriteLine("");
             Console.ReadKey();
         }
